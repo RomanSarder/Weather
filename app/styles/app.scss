@@ -1,0 +1,155 @@
+$space-large: 2.5rem;
+$title-color: purple;
+.page-title {
+    color: $title-color;
+    margin-top: $space-large;
+    margin-bottom: $space-large;
+}
+
+input[type=search] {
+    box-shadow: none;
+}
+
+#title-container-main {
+    height: 200px;
+    text-align: center;
+}
+
+#header-container-main {
+    margin: 0 auto;
+    width: 70%
+}
+
+#title-container-main .ui.center.aligned.header {
+    position: relative;
+    top: -50%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.currently {
+    vertical-align: top;
+    display: block;
+    margin: 0 auto;
+}
+
+.skycon {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+}
+
+.temperature-main {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 2.5em;
+    line-height: 1.3em;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.summary-main {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 2.5em;
+    line-height: 1.3em;
+    font-weight: bold;
+}
+
+.ui.menu .item:before {
+    background-color: transparent;
+}
+
+#search-box {
+    margin: 0 auto;
+    display: block;
+    padding-top: 15px;
+}
+
+.ui.pointing.menu {
+    background-color: #EEE;
+}
+
+.ui.menu .item>.input input {
+    padding: 2px 2px!important;
+    background-color: white!important;
+    text-align: center;
+    font-size: 16px;
+}
+
+#currently-title-main {
+    margin: 5px 5px;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+#currently-title-main h4 {
+    font-weight: normal;
+    font-size: 1.6em;
+    border: 3px dashed #eee;
+}
+
+#additional-info-main {
+    max-width: 600px;
+    max-height: 100px;
+    .ui.segment.basic {
+        background-color: #EEE;
+    }
+    .column {
+        padding: 5px 0px;
+    }
+}
+
+#day-summary-main {
+    display: block;
+    font-size: 2em;
+    margin: 8px auto;
+}
+
+#next-hour-info-main {
+    display: block;
+    font-size: 1.3em;
+    font-weight: 100;
+    margin: 20px auto;
+    color: dimgrey;
+}
+
+#main-info-block {
+    max-height: 140px;
+}
+
+div.ui.basic.segment {
+    text-align: center;
+    padding: 15px 0;
+}
+
+#main-time {
+    margin: auto 10px;
+}
+
+.ui.segment:last-child {
+    margin: 14px auto;
+}
+
+.ui.segment:first-child {
+    margin: 14px auto;
+}
+
+.ui.segment {
+    max-height: auto;
+}
+
+.temperature-day {
+    text-align: center;
+    display: block;
+    position: relative;
+    top: -1em;
+    font-size: 1.5em;
+}
+
+.day-summary {
+    display: block;
+    text-align: center;
+}
