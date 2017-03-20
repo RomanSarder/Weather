@@ -3,6 +3,7 @@ const WeatherForm = require('WeatherForm');
 const WeekWeather = require('WeekWeather');
 const ForecastPresentation = require('ForecastPresentation');
 const ErrorModal = require('ErrorModal');
+const CurrentWeather = require('CurrentWeather')
 const openWeatherMap = require('openWeatherMap');
 
 const Weather = React.createClass({
@@ -56,8 +57,11 @@ const Weather = React.createClass({
       } else if (forecast) {
         return (
           <div className="ui grid">
-            <ForecastPresentation currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[0]} todayForecast={forecast.daily.data[0]}/>
-            <WeekWeather weekForecast={forecast.daily}/>          
+            <div className="row one column centered unpadded">
+              <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[0]}  />
+              <ForecastPresentation todayForecast={forecast.daily.data[0]}/>
+              <WeekWeather weekForecast={forecast.daily}/> 
+            </div>         
           </div>
         );
       }
