@@ -22,7 +22,8 @@ const Weather = React.createClass({
     openWeatherMap.getOne(location).then((fetched) => {
       this.setState({
         forecast: fetched,
-        isLoading: false
+        isLoading: false,
+        display: fetched.daily.data[0]
       });
     }, (e) => {
       this.setState({
@@ -47,8 +48,11 @@ const Weather = React.createClass({
       window.location.hash = '#/weather/';
     }
   },
+  handleDisplayChange: function(data) {
+      this.setState({display: data});
+  },
   render: function () {
-    let {isLoading, forecast, errorMessage} = this.state;
+    let {isLoading, forecast, errorMessage, display} = this.state;
     let self = this;
 
     function renderMessage () {
@@ -59,8 +63,8 @@ const Weather = React.createClass({
           <div className="ui grid">
             <div className="row one column centered unpadded">
               <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[0]}  />
-              <ForecastPresentation todayForecast={forecast.daily.data[0]}/>
-              <WeekWeather weekForecast={forecast.daily}/> 
+              <ForecastPresentation todayForecast={display}/>
+              <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange}/> 
             </div>         
           </div>
         );

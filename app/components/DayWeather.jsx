@@ -2,12 +2,15 @@ const React = require('react');
 const Skycon = require('Skycon');
 
 const DayWeather = React.createClass({
+    handleClick: function(e) {
+        this.props.handleClick(this.props.count);
+    },
     render: function() {
         let {temperatureMax, temperatureMin, summary, icon} = this.props.forecast;
         temperatureMax = temperatureMax < 0 ? Math.floor(temperatureMax) : '+' + Math.floor(temperatureMax)
         temperatureMin = temperatureMin < 0 ? Math.floor(temperatureMin) : '+' + Math.floor(temperatureMin)
         return (
-            <div className="column ui segment">
+            <div className="column ui segment basic" onClick={this.handleClick}>
                 <div className="row one column">
                     <div className="column">
                         <span className="temperature-day">{`${temperatureMax} / ${temperatureMin}`}</span>

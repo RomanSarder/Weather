@@ -110,7 +110,7 @@ div.ui.basic.segment {
 
 #current-time {
     display: inline-block;
-    margin: 5px 5px;
+    margin: 0 5px;
 }
 
 .ui.divider:not(.vertical):not(.horizontal) {
@@ -126,4 +126,8 @@ div.ui.basic.segment {
     margin-left: 0.6rem;
     font-weight: normal;
     color: #bababa;
+}
+
+#week-block {
+    margin-top: 2em;
 }

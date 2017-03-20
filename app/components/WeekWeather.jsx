@@ -4,16 +4,21 @@ const Time = require('Time');
 const DayWeather = require('DayWeather');
 
 const WeekWeather = React.createClass({
+	handleClick: function(count) {
+		let nextWeekForecast = this.props.weekForecast.data.slice(1, this.props.weekForecast.length);
+		this.props.handleClick(nextWeekForecast[count]);
+	},
 	render: function() {
 		let {weekForecast} = this.props;
 		let nextWeekForecast = weekForecast.data.slice(1, weekForecast.length);
-		let key = 1;
+		let key = 0;
+		let count = 0;
 		return(
-				<div className="row one column">
+				<div className="row one column" id="week-block">
 					<div className="column">
-						<div className="ui grid seven column doubling">
+						<div className="ui grid seven column">
 							{nextWeekForecast.map((day) => {
-								return <DayWeather forecast={day} key={key++}/>
+								return <DayWeather forecast={day} key={key++} count={count++} handleClick={this.handleClick}/>
 							} )}
 						</div>
 					</div>

@@ -8,7 +8,7 @@ const CurrentWeather = React.createClass({
     render: function() {
         let {currentForecast, nextHourForecast} = this.props;
         return (
-            <div className="column center aligned">
+            <div className="column center aligned" id="current">
                     <div className="ui section divider"><span>Now</span><span id="current-time">15:36</span></div>
                     <span className="skycon-main"><Skycon icon={currentForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}&nbsp;°</span>
