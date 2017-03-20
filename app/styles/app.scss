@@ -10,54 +10,6 @@ input[type=search] {
     box-shadow: none;
 }
 
-#title-container-main {
-    height: 200px;
-    text-align: center;
-}
-
-#header-container-main {
-    margin: 0 auto;
-    width: 70%
-}
-
-#title-container-main .ui.center.aligned.header {
-    position: relative;
-    top: -50%;
-    display: inline-block;
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.currently {
-    vertical-align: top;
-    display: block;
-    margin: 0 auto;
-}
-
-.skycon {
-    width: 100px;
-    height: 50px;
-    display: inline-block;
-}
-
-.temperature-main {
-    vertical-align: top;
-    display: inline-block;
-    font-size: 2.5em;
-    line-height: 1.3em;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.summary-main {
-    vertical-align: top;
-    display: inline-block;
-    font-size: 2.5em;
-    line-height: 1.3em;
-    font-weight: bold;
-}
-
 .ui.menu .item:before {
     background-color: transparent;
 }
@@ -77,47 +29,6 @@ input[type=search] {
     background-color: white!important;
     text-align: center;
     font-size: 16px;
-}
-
-#currently-title-main {
-    margin: 5px 5px;
-    max-width: 150px;
-    margin: 0 auto;
-}
-
-#currently-title-main h4 {
-    font-weight: normal;
-    font-size: 1.6em;
-    border: 3px dashed #eee;
-}
-
-#additional-info-main {
-    max-width: 600px;
-    max-height: 100px;
-    .ui.segment.basic {
-        background-color: #EEE;
-    }
-    .column {
-        padding: 5px 0px;
-    }
-}
-
-#day-summary-main {
-    display: block;
-    font-size: 2em;
-    margin: 8px auto;
-}
-
-#next-hour-info-main {
-    display: block;
-    font-size: 1.3em;
-    font-weight: 100;
-    margin: 20px auto;
-    color: dimgrey;
-}
-
-#main-info-block {
-    max-height: 140px;
 }
 
 div.ui.basic.segment {
@@ -152,4 +63,55 @@ div.ui.basic.segment {
 .day-summary {
     display: block;
     text-align: center;
+}
+
+#current-container {
+    text-align: center;
+}
+
+.skycon-main {
+    display: inline-block;
+    width: 6.5rem;
+    height: 3.5rem;
+}
+
+.summary-main {
+    font-size: 1.8em;
+    vertical-align: top;
+    display: inline-block;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+}
+
+.temperature-main {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.5em;
+    vertical-align: top;
+    margin: 0 20px 0 0;
+}
+
+#today-container {
+    text-align: center;
+}
+
+.nexthour-main {
+    display: block;
+    font-size: 1.3rem;
+    margin: 0 auto 10px auto;
+}
+
+.feelslike-main {
+    display: block;
+    font-size: 1.5em;
+    margin: 0 auto 15px auto;
+}
+
+.ui.divider:not(.vertical):not(.horizontal) {
+    border-top-color: transparent;
+}
+
+.ui.grid>.row.unpadded {
+    padding-top: 0;
 }

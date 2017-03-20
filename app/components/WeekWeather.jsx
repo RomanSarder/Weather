@@ -3,10 +3,9 @@ const Skycon = require('Skycon');
 const Time = require('Time');
 const DayWeather = require('DayWeather');
 
-const WeatherMessage = React.createClass({
+const WeekWeather = React.createClass({
 	render: function() {
-		let {currentForecast, weekForecast, nextHourForecast} = this.props;
-		let thisDayForecast = weekForecast.data[0];
+		let {weekForecast} = this.props;
 		let nextWeekForecast = weekForecast.data.slice(1, weekForecast.length);
 		let key = 1;
 		return(
@@ -23,7 +22,7 @@ const WeatherMessage = React.createClass({
 	}
 })
 
-module.exports = WeatherMessage;
+module.exports = WeekWeather;
 {/*<div className="ui grid one column container centered">
 				<div className="row one column">
 					<div className="column">
