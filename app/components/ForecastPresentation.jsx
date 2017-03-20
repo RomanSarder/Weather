@@ -10,11 +10,11 @@ const ForecastPresentation = React.createClass({
         return(
             <div className="row one column centered unpadded">
                 <div className="column center aligned">
-                    <div className="ui section divider"><span>Now</span></div>
+                    <div className="ui section divider"><span>Now</span><span id="current-time">15:36</span></div>
                     <span className="skycon-main"><Skycon icon={currentForecast.icon}/></span>
-                    <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}</span>
+                    <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}&nbsp;°</span>
                     <span className="summary-main">{currentForecast.summary}</span>
-                    <span className="feelslike-main">Feels like {this.floorTemp(currentForecast.apparentTemperature)}</span>
+                    <span className="feelslike-main">Feels like {this.floorTemp(currentForecast.apparentTemperature)}&nbsp;°</span>
                 </div>
                 <div className="column center aligned">
                     <div className="ui large horizontal divided list">
@@ -39,9 +39,9 @@ const ForecastPresentation = React.createClass({
                 <div className="column center aligned">
                     <div className="ui section divider">Today</div>
                     <span className="skycon-main"><Skycon icon={todayForecast.icon}/></span>
-                    <span className="temperature-main">{this.floorTemp(todayForecast.temperatureMax)}<span>/</span>{this.floorTemp(todayForecast.temperatureMin)}</span>
+                    <span className="temperature-main">{this.floorTemp(todayForecast.temperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.temperatureMin)}&nbsp;°</span></span>
                     <span className="summary-main">{todayForecast.summary}</span>
-                    <span className="feelslike-main">Feels like {this.floorTemp(todayForecast.apparentTemperatureMax)}/{this.floorTemp(todayForecast.apparentTemperatureMin)}</span>
+                    <span className="feelslike-main">Feels like {this.floorTemp(todayForecast.apparentTemperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.apparentTemperatureMin)}&nbsp;°</span></span>
                 </div>
                 <div className="column center aligned">
                     <div className="ui large horizontal divided list">

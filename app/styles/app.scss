@@ -108,10 +108,22 @@ div.ui.basic.segment {
     margin: 0 auto 15px auto;
 }
 
+#current-time {
+    display: inline-block;
+    margin: 5px 5px;
+}
+
 .ui.divider:not(.vertical):not(.horizontal) {
     border-top-color: transparent;
 }
 
 .ui.grid>.row.unpadded {
     padding-top: 0;
+}
+
+.temperature-min {
+    display: inline-block;
+    margin-left: 0.6rem;
+    font-weight: normal;
+    color: #bababa;
 }
