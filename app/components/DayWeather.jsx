@@ -7,10 +7,10 @@ const DayWeather = React.createClass({
     },
     render: function() {
         let {temperatureMax, temperatureMin, summary, icon} = this.props.forecast;
-        temperatureMax = temperatureMax < 0 ? Math.floor(temperatureMax) : '+' + Math.floor(temperatureMax)
-        temperatureMin = temperatureMin < 0 ? Math.floor(temperatureMin) : '+' + Math.floor(temperatureMin)
+        temperatureMax = temperatureMax < 0 ? Math.round(temperatureMax) : '+' + Math.round(temperatureMax)
+        temperatureMin = temperatureMin < 0 ? Math.round(temperatureMin) : '+' + Math.round(temperatureMin)
         return (
-            <div className="column ui segment basic" onClick={this.handleClick}>
+            <div className={`column ui segment ${this.props.isActive ? "" : 'basic'}`} onClick={this.handleClick}>
                 <div className="row one column">
                     <div className="column">
                         <span className="temperature-day">{`${temperatureMax} / ${temperatureMin}`}</span>

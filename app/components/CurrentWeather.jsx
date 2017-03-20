@@ -3,7 +3,7 @@ const Skycon = require('Skycon');
 
 const CurrentWeather = React.createClass({
     floorTemp: function(temperature) {
-        return temperature > 0 ? `+${Math.floor(temperature)}` : Math.floor(temperature); 
+        return temperature > 0 ? `+${Math.round(temperature)}` : Math.round(temperature); 
     },
     render: function() {
         let {currentForecast, nextHourForecast} = this.props;
