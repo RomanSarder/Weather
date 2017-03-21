@@ -1,5 +1,9 @@
 $space-large: 2.5rem;
 $title-color: purple;
+body {
+    font-family: 'Open Sans';
+}
+
 .page-title {
     color: $title-color;
     margin-top: $space-large;
@@ -91,11 +95,13 @@ div.ui.basic.segment {
 }
 
 .summary-main {
-    font-size: 1.8em;
+    font-size: 2.3em;
     vertical-align: top;
     display: inline-block;
-    line-height: 1.6em;
+    line-height: 1.3em;
     margin-bottom: 10px;
+    font-family: Railway;
+    font-weight: 300;
 }
 
 .temperature-main {
@@ -155,4 +161,29 @@ div.ui.basic.segment {
 .date {
     display: block;
     margin: 15px auto
+}
+
+.day-week-presentation {
+    display: block;
+    font-size: 1.8em;
+}
+
+.date-presentation {
+    display: block;
+    font-size: 1.7em;
+    margin: 20px auto;
+}
+
+#presentation-block {
+    margin-top: 40px;
+}
+
+#current {
+    margin-top: 20px;
+}
+
+.current-header {
+    display: block;
+    font-size: 1.7em;
+    margin: 20px auto
 }

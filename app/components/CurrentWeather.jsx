@@ -11,7 +11,7 @@ const CurrentWeather = React.createClass({
         let timeNow = moment().tz(timeZone).format('HH:mm');
         return (
             <div className="column center aligned" id="current">
-                    <div className="ui section divider"><span>Now</span><span id="current-time">{timeNow}</span></div>
+                   <span className="current-header">Currently {timeNow}</span>
                     <span className="skycon-main"><Skycon icon={currentForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}&nbsp;°</span>
                     <span className="summary-main">{currentForecast.summary}</span>

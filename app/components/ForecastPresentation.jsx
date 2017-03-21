@@ -7,15 +7,14 @@ const ForecastPresentation = React.createClass({
         return temperature > 0 ? `+${Math.round(temperature)}` : Math.round(temperature); 
     },
     render: function() {
-        let {todayForecast, timeZone} = this.props;
+        let {todayForecast, timeZone, isToday} = this.props;
         let dateInfo = moment(todayForecast.time * 1000).tz(timeZone);
         let date = dateInfo.date();
         let month = dateInfo.format('MMMM');
         let day = dateInfo.format('dddd');
         return(
-                <div className="column center aligned">
-                    <div className="ui section divider"><span>Today</span></div>
-                    <span className="day-week-presentation">{day}</span>
+                <div className="column center aligned" id="presentation-block">
+                    <span className="day-week-presentation">{isToday ? 'Today' : day}</span>
                     <span className="date-presentation">{date} {month}</span>
                     <span className="skycon-main"><Skycon icon={todayForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(todayForecast.temperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.temperatureMin)}&nbsp;°</span></span>
