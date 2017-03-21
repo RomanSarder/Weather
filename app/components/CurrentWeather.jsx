@@ -1,15 +1,17 @@
 const React = require('react');
 const Skycon = require('Skycon');
+const moment = require('moment-timezone');
 
 const CurrentWeather = React.createClass({
     floorTemp: function(temperature) {
         return temperature > 0 ? `+${Math.round(temperature)}` : Math.round(temperature); 
     },
     render: function() {
-        let {currentForecast, nextHourForecast} = this.props;
+        let {currentForecast, nextHourForecast, timeZone} = this.props;
+        let timeNow = moment().tz(timeZone).format('HH:mm');
         return (
             <div className="column center aligned" id="current">
-                    <div className="ui section divider"><span>Now</span><span id="current-time">15:36</span></div>
+                    <div className="ui section divider"><span>Now</span><span id="current-time">{timeNow}</span></div>
                     <span className="skycon-main"><Skycon icon={currentForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}&nbsp;°</span>
                     <span className="summary-main">{currentForecast.summary}</span>

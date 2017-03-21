@@ -23,7 +23,8 @@ const Weather = React.createClass({
       this.setState({
         forecast: fetched,
         isLoading: false,
-        display: fetched.daily.data[0]
+        display: fetched.daily.data[0],
+        timeZone: fetched.timezone
       });
     }, (e) => {
       this.setState({
@@ -62,9 +63,9 @@ const Weather = React.createClass({
         return (
           <div className="ui grid container">
             <div className="row one column centered unpadded">
-              <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[1]}  />
-              <ForecastPresentation todayForecast={display}/>
-              <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange}/> 
+              <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[1]} timeZone={self.state.timeZone} />
+              <ForecastPresentation todayForecast={display} timeZone={self.state.timeZone}/>
+              <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange} timeZone={self.state.timeZone}/> 
             </div>         
           </div>
         );
