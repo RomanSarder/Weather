@@ -48,16 +48,31 @@ div.ui.basic.segment {
     margin: 14px auto;
 }
 
-.ui.segment {
-    max-height: auto;
+.ui.segment.basic {
+    border: 1px solid transparent;
 }
 
-.temperature-day {
+.ui.segment,
+.ui.segment.basic {
+    max-width: 33.33333%!important;
     text-align: center;
-    display: block;
-    position: relative;
-    top: -1em;
-    font-size: 1.5em;
+}
+
+.temperatureMin-day {
+    display: inline-block;
+    font-size: 1.3em;
+    color: #bababa;
+    margin-left: 0.3em;
+    display: inline-block;
+    margin-bottom: 0.9em;
+    line-height: 1em;
+    vertical-align: top;
+}
+
+.temperatureMax-day {
+    display: inline-block;
+    font-size: 1.4em;
+    margin-bottom: 0.9em;
 }
 
 .day-summary {

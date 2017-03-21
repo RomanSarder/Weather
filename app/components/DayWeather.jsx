@@ -13,7 +13,8 @@ const DayWeather = React.createClass({
             <div className={`column ui segment ${this.props.isActive ? "" : 'basic'}`} onClick={this.handleClick}>
                 <div className="row one column">
                     <div className="column">
-                        <span className="temperature-day">{`${temperatureMax} / ${temperatureMin}`}</span>
+                        <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
+                        <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
                     </div>
                 </div>
                 <div className="row one column">

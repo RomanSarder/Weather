@@ -60,7 +60,7 @@ const Weather = React.createClass({
         return <h3 className="text-center">Fetching weather...</h3>;
       } else if (forecast) {
         return (
-          <div className="ui grid">
+          <div className="ui grid container">
             <div className="row one column centered unpadded">
               <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[1]}  />
               <ForecastPresentation todayForecast={display}/>

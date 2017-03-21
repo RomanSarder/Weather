@@ -22,7 +22,7 @@ const WeekWeather = React.createClass({
 		return(
 				<div className="row one column" id="week-block">
 					<div className="column">
-						<div className="ui grid seven column">
+						<div className="ui grid seven column doubling">
 							{nextWeekForecast.map((day) => {
 								return <DayWeather forecast={day} key={key++} count={count++} handleClick={this.handleClick} isActive={this.state.activeIndex === count-1}/>
 							} )}
