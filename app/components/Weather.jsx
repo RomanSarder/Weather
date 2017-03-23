@@ -4,7 +4,7 @@ const WeekWeather = require('WeekWeather');
 const ForecastPresentation = require('ForecastPresentation');
 const ErrorModal = require('ErrorModal');
 const CurrentWeather = require('CurrentWeather')
-const openWeatherMap = require('openWeatherMap');
+const WeatherApi = require('WeatherApi');
 
 const Weather = React.createClass({
   getInitialState: function () {
@@ -19,7 +19,7 @@ const Weather = React.createClass({
       forecast: undefined
     });
 
-    openWeatherMap.getOne(location).then((fetched) => {
+    WeatherApi.getOne(location).then((fetched) => {
       this.setState({
         forecast: fetched,
         isLoading: false,

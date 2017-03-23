@@ -12,6 +12,7 @@ const DayWeather = React.createClass({
         let date = dateInfo.date();
         let month = dateInfo.format('MMMM');
         let day = dateInfo.format('dddd');
+        day = day[0].toUpperCase() + day.slice(1);
         temperatureMax = temperatureMax < 0 ? Math.round(temperatureMax) : '+' + Math.round(temperatureMax)
         temperatureMin = temperatureMin < 0 ? Math.round(temperatureMin) : '+' + Math.round(temperatureMin)
         return (

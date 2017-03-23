@@ -12,6 +12,7 @@ const ForecastPresentation = React.createClass({
         let date = dateInfo.date();
         let month = dateInfo.format('MMMM');
         let day = dateInfo.format('dddd');
+        day = day[0].toUpperCase() + day.slice(1);
         return(
                 <div className="column center aligned" id="presentation-block">
                     <span className="day-week-presentation">{isToday ? 'Today' : day}</span>
@@ -19,21 +20,21 @@ const ForecastPresentation = React.createClass({
                     <span className="skycon-main"><Skycon icon={todayForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(todayForecast.temperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.temperatureMin)}&nbsp;°</span></span>
                     <span className="summary-main">{todayForecast.summary}</span>
-                    <span className="feelslike-main">Feels like {this.floorTemp(todayForecast.apparentTemperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.apparentTemperatureMin)}&nbsp;°</span></span>
+                    <span className="feelslike-main">Чувствуется как: {this.floorTemp(todayForecast.apparentTemperatureMax)}&nbsp;°<span className="temperature-min">{this.floorTemp(todayForecast.apparentTemperatureMin)}&nbsp;°</span></span>
                     <div className="ui large horizontal divided list">
                         <div className="item">
                             <div className="content">
-                                <div className="header">Humidity: {todayForecast.humidity}</div>
+                                <div className="header">Влажность: {todayForecast.humidity}</div>
                             </div>
                         </div>
                             <div className="item">
                                 <div className="content">
-                                     <div className="header">Windspeed: {todayForecast.windSpeed}</div>
+                                     <div className="header">Ветер: {todayForecast.windSpeed}</div>
                                 </div>
                             </div>
                             <div className="item">
                                 <div className="content">
-                                    <div className="header">Precib: {todayForecast.precipProbability}</div>
+                                    <div className="header">Вероятность осадков: {todayForecast.precipProbability}</div>
                                 </div>
                             </div>
                     </div>
