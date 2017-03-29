@@ -1,9 +1,5 @@
 $space-large: 2.5rem;
 $title-color: purple;
-body {
-    font-family: 'Open Sans';
-}
-
 .page-title {
     color: $title-color;
     margin-top: $space-large;
@@ -25,7 +21,7 @@ input[type=search] {
 }
 
 .ui.pointing.menu {
-    background-color: #EEE;
+    background-color: #35656b;
 }
 
 .ui.menu .item>.input input {
@@ -36,36 +32,32 @@ input[type=search] {
 }
 
 div.ui.basic.segment {
-    text-align: center;
-    padding: 15px 0;
+    border: 1px solid #eae0d8;
+    border-top: none;
 }
 
 #main-time {
     margin: auto 10px;
 }
 
-.ui.segment:last-child {
-    margin: 14px auto;
-}
-
-.ui.segment:first-child {
-    margin: 14px auto;
-}
-
-.ui.segment.basic {
-    border: 1px solid transparent;
-}
-
 .ui.segment,
 .ui.segment.basic {
     max-width: 33.33333%!important;
     text-align: center;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #fec463;
+    margin: 0!important;
+    color: #99663C;
+    border-top: none;
+    border: 1px solid #eae0d8!important
 }
 
 .temperatureMin-day {
     display: inline-block;
-    font-size: 1.3em;
-    color: #bababa;
+    font-size: 1.4em;
+    color: #b79376;
     margin-left: 0.3em;
     display: inline-block;
     margin-bottom: 0.9em;
@@ -89,7 +81,10 @@ div.ui.basic.segment {
 }
 
 .skycon-main {
-    display: inline-block;
+    display: block;
+    min-width: 325px;
+    min-height: 165px;
+    margin: auto;
     width: 6.5rem;
     height: 3.5rem;
 }
@@ -100,7 +95,6 @@ div.ui.basic.segment {
     display: inline-block;
     line-height: 1.3em;
     margin-bottom: 10px;
-    font-family: Railway;
     font-weight: 300;
 }
 
@@ -178,12 +172,22 @@ div.ui.basic.segment {
     margin-top: 40px;
 }
 
+.ui.list>.item .header {
+    color: #35656b;
+}
+
 #current {
-    margin-top: 20px;
+    padding: 20px 0px;
+    background-color: #adebf6;
+    color: #35656b
 }
 
 .current-header {
     display: block;
     font-size: 1.7em;
     margin: 20px auto
+}
+
+#week-list {
+    margin: -2em auto;
 }

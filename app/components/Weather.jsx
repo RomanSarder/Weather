@@ -56,15 +56,14 @@ const Weather = React.createClass({
     let {isLoading, forecast, errorMessage, display} = this.state;
     let self = this;
 
-    function renderMessage () {
+    function renderWeather () {
       if (isLoading) {
         return <h3 className="text-center">Fetching weather...</h3>;
       } else if (forecast) {
         return (
-          <div className="ui grid container">
+          <div className="ui grid">
             <div className="row one column centered unpadded">
               <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[1]} timeZone={self.state.timeZone} />
-              <ForecastPresentation todayForecast={display} timeZone={self.state.timeZone} isToday={self.state.isToday}/>
               <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange} timeZone={self.state.timeZone}/> 
             </div>         
           </div>
@@ -82,7 +81,7 @@ const Weather = React.createClass({
 
     return (
       <div>
-        {renderMessage()}
+        {renderWeather()}
         {renderError()}
       </div>
     )

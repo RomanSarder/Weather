@@ -21,16 +21,14 @@ const DayWeather = React.createClass({
                     <div className="column">
                         <span className="day-week">{day}</span>
                         <span className="date">{date} {month}</span>                        
-                        <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
-                        <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
+                        
                     </div>
                 </div>
                 <div className="row one column">
                     <div className="column">
-                        <Skycon className="icon-day" icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon}/>
-                    </div>
-                    <div className="column">
-                        <span className="day-summary">{summary === 'Partly cloudy overnight.' ? 'Clear throughout the day.' : summary}</span>
+                        <Skycon className="icon-day" color='#99663C' icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon}/>
+                        <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
+                        <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 app.get('/api', function(req, res) {
     console.log('handling request...');
     let { country, city } = req.query;
-    let requestUrl = `${DARK_SKY_WEATHER_URL}${req.query.lat},${req.query.lng}?&units=si&extend=hourly&lang=ru`
+    let requestUrl = `${DARK_SKY_WEATHER_URL}${req.query.lat},${req.query.lng}?&units=si&extend=hourly`
     axios.get(requestUrl).then((response) => {
         console.log('FROM SERVER');
         response.data.currently.city = city;
