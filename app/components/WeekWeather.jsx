@@ -17,12 +17,13 @@ const WeekWeather = React.createClass({
 	render: function() {
 		let {weekForecast, timeZone} = this.props;
 		let nextWeekForecast = weekForecast.data.slice(1, weekForecast.length);
+		nextWeekForecast.splice(-1, 1);
 		let key = 0;
 		let count = 0;
 		return(
 				<div className="row one column" id="week-block">
 					<div className="column">
-						<div className="ui grid seven column doubling" id="week-list">
+						<div className="ui grid six column doubling" id="week-list">
 							{nextWeekForecast.map((day) => {
 								return <DayWeather forecast={day} key={key++} count={count++} handleClick={this.handleClick} isActive={this.state.activeIndex === count-1} timeZone={timeZone}/>
 							} )}

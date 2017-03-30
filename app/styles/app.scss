@@ -1,5 +1,41 @@
 $space-large: 2.5rem;
 $title-color: purple;
+@media screen and (max-width: 455px) {
+    .ui.segment,
+    .ui.segment.basic {
+        max-height: 180px!important;
+        padding: 1em 0.2em!important;
+    }
+    .day-week {
+        margin-bottom: 0.4em;
+        font-size: 1em!important;
+    }
+    .date {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: 456px) and (max-width: 768px) {
+    .day-week {
+        font-size: 1.4em!important;
+    }
+    .day-icon {
+        width: 6.5em!important;
+        height: 3.5em!important;
+    }
+    .ui.segment,
+    .ui.segment.basic {
+        padding: 1em 0.2em!important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .ui.segment,
+    .ui.segment.basic {
+        padding: 2em 2em!important;
+    }
+}
+
 .page-title {
     color: $title-color;
     margin-top: $space-large;
@@ -18,10 +54,14 @@ input[type=search] {
     margin: 0 auto;
     display: block;
     padding-top: 15px;
+    input {
+        height: 2em;
+        width: 15em;
+    }
 }
 
 .ui.pointing.menu {
-    background-color: #35656b;
+    background-color: powderblue;
 }
 
 .ui.menu .item>.input input {
@@ -34,6 +74,7 @@ input[type=search] {
 div.ui.basic.segment {
     border: 1px solid #eae0d8;
     border-top: none;
+    border-left: none;
 }
 
 #main-time {
@@ -43,6 +84,7 @@ div.ui.basic.segment {
 .ui.segment,
 .ui.segment.basic {
     max-width: 33.33333%!important;
+    max-height: 250px;
     text-align: center;
     color: white;
     text-align: center;
@@ -51,7 +93,13 @@ div.ui.basic.segment {
     margin: 0!important;
     color: #99663C;
     border-top: none;
-    border: 1px solid #eae0d8!important
+    border: 1px solid #eae0d8!important;
+    transition: background .3s ease;
+}
+
+.ui.segment:hover,
+.ui.segment.basic:hover {
+    background-color: white;
 }
 
 .temperatureMin-day {
@@ -149,17 +197,23 @@ div.ui.basic.segment {
 
 .day-week {
     display: block;
-    font-size: 1.5em;
+    font-size: 1.6em;
 }
 
 .date {
     display: block;
-    margin: 15px auto
+    margin: 0.5em auto
 }
 
 .day-week-presentation {
     display: block;
     font-size: 1.8em;
+}
+
+.day-icon {
+    width: 13.5em;
+    height: 8.5em;
+    margin: 0 auto;
 }
 
 .date-presentation {
@@ -190,4 +244,10 @@ div.ui.basic.segment {
 
 #week-list {
     margin: -2em auto;
+}
+
+.current-date {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
 }

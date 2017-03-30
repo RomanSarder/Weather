@@ -63,7 +63,7 @@ const Weather = React.createClass({
         return (
           <div className="ui grid">
             <div className="row one column centered unpadded">
-              <CurrentWeather currentForecast={forecast.currently} nextHourForecast={forecast.hourly.data[1]} timeZone={self.state.timeZone} />
+              <CurrentWeather currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={self.state.timeZone} />
               <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange} timeZone={self.state.timeZone}/> 
             </div>         
           </div>

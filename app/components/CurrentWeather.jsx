@@ -7,16 +7,18 @@ const CurrentWeather = React.createClass({
         return temperature > 0 ? `+${Math.round(temperature)}` : Math.round(temperature); 
     },
     render: function() {
-        let {currentForecast, nextHourForecast, timeZone} = this.props;
-        let timeNow = moment().tz(timeZone).format('HH:mm');
+        let {currentForecast, todayDate, timeZone} = this.props;
+        let timeNow = moment(todayDate * 1000).tz(timeZone);
+        let todayDay = timeNow.format('dddd');
+        let date = timeNow.date();
+        let todayMonth = timeNow.format('MMMM')
         return (
             <div className="column center aligned" id="current">
-                   {/*<span className="current-header">Сейчас {timeNow}</span>*/}
+                   <span className="current-date">{`${date} ${todayMonth}, ${todayDay}`}</span>
                     <span className="skycon-main"><Skycon color='#35656b' icon={currentForecast.icon}/></span>
                     <span className="temperature-main">{this.floorTemp(currentForecast.temperature)}&nbsp;°</span>
                     <span className="summary-main">{currentForecast.summary}</span>
                     <span className="feelslike-main">Feels like: {this.floorTemp(currentForecast.apparentTemperature)}&nbsp;°</span>
-                    {/*<span className="nexthour-main">Следующий час: {nextHourForecast.summary}</span>*/}
                     <div className="ui large horizontal divided list">
                         <div className="item">
                             <div className="content">
