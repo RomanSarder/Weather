@@ -19,10 +19,6 @@ $title-color: purple;
     .day-week {
         font-size: 1.4em!important;
     }
-    .day-icon {
-        width: 6.5em!important;
-        height: 3.5em!important;
-    }
     .ui.segment,
     .ui.segment.basic {
         padding: 1em 0.2em!important;
@@ -55,8 +51,9 @@ input[type=search] {
     display: block;
     padding-top: 15px;
     input {
-        height: 2em;
-        width: 15em;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #35656b;
     }
 }
 
@@ -128,7 +125,7 @@ div.ui.basic.segment {
     text-align: center;
 }
 
-.skycon-main {
+.skycon-today {
     display: block;
     min-width: 325px;
     min-height: 165px;
@@ -138,19 +135,20 @@ div.ui.basic.segment {
 }
 
 .summary-main {
-    font-size: 2.3em;
+    font-size: 2.0em;
     vertical-align: top;
     display: inline-block;
     line-height: 1.3em;
     margin-bottom: 10px;
     font-weight: 300;
+    margin-right: 0.3em;
 }
 
 .temperature-main {
     display: inline-block;
-    font-size: 2em;
+    font-size: 2.0em;
     font-weight: bold;
-    line-height: 1.5em;
+    line-height: 1.3em;
     vertical-align: top;
     margin: 0 20px 0 0;
 }
@@ -211,8 +209,8 @@ div.ui.basic.segment {
 }
 
 .day-icon {
-    width: 13.5em;
-    height: 8.5em;
+    display: block;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -250,4 +248,35 @@ div.ui.basic.segment {
     display: block;
     font-size: 1.5em;
     margin-bottom: 1.5em;
+}
+
+.today-weather {
+    display: block;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.today-max {
+    display: inline-block;
+    margin: 0.3em auto 0.3em 0.3em;
+}
+
+.today-min {
+    display: inline-block;
+    margin: 0.3em auto 20px 0.3em;
+    color: #85a2a6;
+}
+
+.today-summary {
+    display: inline-block;
+    margin: 0.3em auto 0.6em 0.3em;
+    line-height: 1.2em;
+}
+
+.current-icon {
+    height: 40px;
+    display: inline-block;
+    width: 80px;
+    vertical-align: top;
+    line-height: 1.3em;
 }
