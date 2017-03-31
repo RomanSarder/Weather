@@ -9,11 +9,6 @@ const WeekWeather = React.createClass({
 			activeIndex: undefined
 		}
 	},
-	handleClick: function(count) {
-		let nextWeekForecast = this.props.weekForecast.data.slice(1, this.props.weekForecast.length);
-		this.setState({activeIndex: count});
-		this.props.handleClick(nextWeekForecast[count]);
-	},
 	render: function() {
 		let {weekForecast, timeZone} = this.props;
 		let nextWeekForecast = weekForecast.data.slice(1, weekForecast.length);
@@ -25,7 +20,7 @@ const WeekWeather = React.createClass({
 					<div className="column">
 						<div className="ui grid six column doubling" id="week-list">
 							{nextWeekForecast.map((day) => {
-								return <DayWeather forecast={day} key={key++} count={count++} handleClick={this.handleClick} isActive={this.state.activeIndex === count-1} timeZone={timeZone}/>
+								return <DayWeather forecast={day} key={key++} count={count++} timeZone={timeZone}/>
 							} )}
 						</div>
 					</div>

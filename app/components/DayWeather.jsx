@@ -2,9 +2,6 @@ const React = require('react');
 const Skycon = require('Skycon');
 const moment = require('moment-timezone');
 const DayWeather = React.createClass({
-    handleClick: function(e) {
-        this.props.handleClick(this.props.count);
-    },
     render: function() {
         let {temperatureMax, temperatureMin, summary, icon, time} = this.props.forecast;
         let {timeZone} = this.props;
@@ -16,17 +13,20 @@ const DayWeather = React.createClass({
         temperatureMax = temperatureMax < 0 ? Math.round(temperatureMax) : '+' + Math.round(temperatureMax)
         temperatureMin = temperatureMin < 0 ? Math.round(temperatureMin) : '+' + Math.round(temperatureMin)
         return (
-            <div className={`column ui segment ${this.props.isActive ? "" : 'basic'}`} onClick={this.handleClick}>
+            <div className="column ui segment">
                 <div className="row one column">
                     <div className="column">
-                        <span className="day-week">{day}</span>
-                        <span className="date">{date} {month}</span>                        
-                        
+                        <div className="row one column">
+                            <div className="column">
+                                <span className="day-week">{day}</span>
+                                <span className="date">{date} {month}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="row one column">
                     <div className="column">
-                        <span className="day-icon"><Skycon className="icon-day" color='#99663C' icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon}/></span>
+                        <span className="day-icon"><Skycon className="icon-day" color='#99663C' icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon} /></span>
                         <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
                         <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
                     </div>

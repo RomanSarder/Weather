@@ -23,7 +23,6 @@ const Weather = React.createClass({
       this.setState({
         forecast: fetched,
         isLoading: false,
-        display: fetched.daily.data[0],
         timeZone: fetched.timezone
       });
     }, (e) => {
@@ -49,11 +48,8 @@ const Weather = React.createClass({
       window.location.hash = '#/weather/';
     }
   },
-  handleDisplayChange: function(data) {
-      this.setState({display: data, isToday: false});
-  },
   render: function () {
-    let {isLoading, forecast, errorMessage, display} = this.state;
+    let {isLoading, forecast, errorMessage} = this.state;
     let self = this;
 
     function renderWeather () {
@@ -64,7 +60,7 @@ const Weather = React.createClass({
           <div className="ui grid">
             <div className="row one column centered unpadded">
               <CurrentWeather currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={self.state.timeZone} todayWeather={forecast.daily.data[0]} />
-              <WeekWeather weekForecast={forecast.daily} handleClick={self.handleDisplayChange} timeZone={self.state.timeZone}/> 
+              <WeekWeather weekForecast={forecast.daily} timeZone={self.state.timeZone}/> 
             </div>         
           </div>
         );

@@ -14,7 +14,7 @@ $title-color: purple;
         display: none!important;
     }
     .today-weather {
-        font-size: 1.5em!important;
+        font-size: 1.3em!important;
     }
     .current-icon {
         width: 65px!important;
@@ -24,8 +24,9 @@ $title-color: purple;
         font-size: 12px!important;
     }
     .temperature-main,
+    .feelslike-main,
     .summary-main {
-        font-size: 1.5em!important
+        font-size: 1.3em!important
     }
 }
 
@@ -50,6 +51,9 @@ $title-color: purple;
     .temperature-main,
     .summary-main {
         font-size: 1.8em!important
+    }
+    .feelslike-main {
+        font-size: 1.5em!important
     }
 }
 
@@ -122,11 +126,6 @@ div.ui.basic.segment {
     transition: background .3s ease;
 }
 
-.ui.segment:hover,
-.ui.segment.basic:hover {
-    background-color: white;
-}
-
 .temperatureMin-day {
     display: inline-block;
     font-size: 1.4em;
@@ -178,7 +177,7 @@ div.ui.basic.segment {
     font-weight: bold;
     line-height: 1.3em;
     vertical-align: top;
-    margin: 0 20px 0 0;
+    margin: 0 0.3em 0 0;
 }
 
 #today-container {
@@ -269,7 +268,7 @@ div.ui.basic.segment {
 }
 
 #week-list {
-    margin: -2em auto;
+    margin-top: -2em;
 }
 
 .current-date {
