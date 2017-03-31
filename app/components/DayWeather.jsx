@@ -23,12 +23,12 @@ const DayWeather = React.createClass({
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="row one column">
-                    <div className="column">
-                        <span className="day-icon"><Skycon className="icon-day" color='#99663C' icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon} /></span>
-                        <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
-                        <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
+                    <div className="row one column">
+                        <div className="column">
+                            <span className="day-icon"><Skycon className="icon-day" color='#99663C' icon={icon === 'partly-cloudy-night' ? 'clear-day' : icon} /></span>
+                            <span className="temperatureMax-day">{temperatureMax}&nbsp;°</span>
+                            <span className="temperatureMin-day">{temperatureMin}&nbsp;°</span>
+                        </div>
                     </div>
                 </div>
             </div>
