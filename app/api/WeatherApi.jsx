@@ -20,7 +20,7 @@ module.exports = {
         }
       }).then(function(cords) {
         console.log(cords);
-        let host = process.env.PORT ? 'http://powerful-headland-90755.herokuapp.com' : 'http://localhost:3000'
+        let host = process.env.PORT == undefined ? 'http://localhost:3000' : 'http://powerful-headland-90755.herokuapp.com'
         let requestWeatherUrl = `${host}/api?lat=${cords.lat}&lng=${cords.lng}&country=${cords.adminArea1}&city=${cords.adminArea5}`;
         return axios.get(requestWeatherUrl).then(function (res) {
              console.log('FROM CLIENT');
