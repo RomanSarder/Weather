@@ -13,6 +13,20 @@ $title-color: purple;
     .date {
         display: none!important;
     }
+    .today-weather {
+        font-size: 1.5em!important;
+    }
+    .current-icon {
+        width: 65px!important;
+        height: 30px!important;
+    }
+    #current {
+        font-size: 12px!important;
+    }
+    .temperature-main,
+    .summary-main {
+        font-size: 1.5em!important
+    }
 }
 
 @media screen and (min-width: 456px) and (max-width: 768px) {
@@ -22,6 +36,20 @@ $title-color: purple;
     .ui.segment,
     .ui.segment.basic {
         padding: 1em 0.2em!important;
+    }
+    .today-weather {
+        font-size: 1.8em!important;
+    }
+    .current-icon {
+        width: 75px!important;
+        height: 35px!important;
+    }
+    #current {
+        font-size: 14px!important;
+    }
+    .temperature-main,
+    .summary-main {
+        font-size: 1.8em!important
     }
 }
 
