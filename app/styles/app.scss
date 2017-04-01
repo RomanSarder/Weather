@@ -4,7 +4,7 @@ $title-color: purple;
     .ui.segment,
     .ui.segment.basic {
         max-height: 180px!important;
-        padding: 1em 0.2em!important;
+        // padding: 1em 0.2em!important;
     }
     .day-week {
         margin-bottom: 0.4em;
@@ -36,7 +36,7 @@ $title-color: purple;
     }
     .ui.segment,
     .ui.segment.basic {
-        padding: 1em 0.2em!important;
+        // padding: 1em 0.2em!important;
     }
     .today-weather {
         font-size: 1.8em!important;
@@ -60,7 +60,7 @@ $title-color: purple;
 @media screen and (min-width: 769px) {
     .ui.segment,
     .ui.segment.basic {
-        padding: 2em 2em!important;
+        // padding: 2em 2em!important;
     }
 }
 
@@ -113,12 +113,10 @@ div.ui.basic.segment {
 .ui.segment,
 .ui.segment.basic {
     max-width: 33.33333%!important;
-    max-height: 250px;
     text-align: center;
     color: white;
     text-align: center;
-    padding: 15px 0;
-    background-color: #fec463;
+    padding: 0 0!important;
     margin: 0!important;
     color: #99663C;
     border-top: none;
@@ -139,8 +137,9 @@ div.ui.basic.segment {
 
 .temperatureMax-day {
     display: inline-block;
-    font-size: 1.4em;
+    font-size: 1.8em;
     margin-bottom: 0.9em;
+    padding-bottom: 0.5em;
 }
 
 .day-summary {
@@ -223,6 +222,7 @@ div.ui.basic.segment {
 .day-week {
     display: block;
     font-size: 1.6em;
+    padding-top: 1em;
 }
 
 .date {
@@ -306,4 +306,44 @@ div.ui.basic.segment {
     width: 80px;
     vertical-align: top;
     line-height: 1.3em;
+}
+
+//custom semantic reveal 
+.flip {
+    display: block;
+    position: relative;
+}
+
+img {
+    width: 100px;
+    height: 150px;
+}
+
+.front {
+    opacity: 1;
+    position: absolute !important;
+    top: 0em !important;
+    left: 0em !important;
+    z-index: 3 !important;
+    -webkit-transition: all 0.5s ease 0.1s;
+    transition: all 0.5s ease 0.1s;
+    background-color: #fec463;
+    height: 100%;
+    width: 100%;
+}
+
+.back {
+    position: relative !important;
+    z-index: 2 !important;
+    opacity: 0;
+    transition: all 0.5s ease 0.1s;
+}
+
+.front:hover {
+    opacity: 0;
+}
+
+.front:hover~.back {
+    opacity: 1;
+    background-color: white!important;
 }
