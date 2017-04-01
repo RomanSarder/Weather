@@ -21,7 +21,7 @@ module.exports = {
       }).then(function(cords) {
         console.log(cords);
         let host = 'http://powerful-headland-90755.herokuapp.com'
-        // let host = 'http://localhost:3000'
+        // let host = 'http://localhost:3000';
         let requestWeatherUrl = `${host}/api?lat=${cords.lat}&lng=${cords.lng}&country=${cords.adminArea1}&city=${cords.adminArea5}`;
         return axios.get(requestWeatherUrl).then(function (res) {
              console.log('FROM CLIENT');

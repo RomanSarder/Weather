@@ -24,6 +24,8 @@ module.exports = {
         ],
         alias: {
             applicationStyles: 'app/styles/app.scss',
+            icons: 'app/styles/weather-icons.min.css',
+            wind: 'app/styles/weather-icons-wind.min.css'
         },
         extensions: ['*', '.js', '.jsx']
     },

@@ -11,7 +11,8 @@ const CurrentWeather = React.createClass({
         let timeNow = moment(todayDate * 1000).tz(timeZone);
         let todayDay = timeNow.format('dddd');
         let date = timeNow.date();
-        let todayMonth = timeNow.format('MMMM')
+        let todayMonth = timeNow.format('MMMM');
+        let bearing = currentForecast.windSpeed === 0 ? 0 : currentForecast.windBearing
         return (
             <div className="column center aligned" id="current">
                    <span className="current-date">{`${date} ${todayMonth}, ${todayDay}`}</span>
@@ -27,17 +28,18 @@ const CurrentWeather = React.createClass({
                     <div className="ui large horizontal divided list">
                         <div className="item">
                             <div className="content">
-                                <div className="header">Humidity: {currentForecast.humidity}</div>
+                                <div className="header"><i className="wi wi-humidity"></i> {currentForecast.humidity * 100}%</div>
                             </div>
                         </div>
                         <div className="item">
                             <div className="content">
-                                 <div className="header">Wind: {currentForecast.windSpeed}</div>
+                                {/*{`wi wi-wind from-${bearing}-deg`}*/}
+                                 <div className="header"><i className={`wi wi-wind from-${bearing}-deg`}></i> {currentForecast.windSpeed}mph</div>
                              </div>
                         </div>
                         <div className="item">
                             <div className="content">
-                                <div className="header">Precip: {currentForecast.precipProbability}</div>
+                                <div className="header"><i className="wi wi-umbrella"></i> {currentForecast.precipProbability}%</div>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,9 @@ const {Route, Router, IndexRoute, hashHistory, IndexRedirect} = require('react-r
 const Main = require('Main');
 const Weather = require('Weather');
 
-//Load Foundation
+//Load Styles
+require('icons');
+require('wind');
 require('applicationStyles');
 
 ReactDOM.render(

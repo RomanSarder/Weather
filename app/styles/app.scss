@@ -20,9 +20,6 @@ $title-color: purple;
         width: 65px!important;
         height: 30px!important;
     }
-    #current {
-        font-size: 12px!important;
-    }
     .temperature-main,
     .feelslike-main,
     .summary-main {
@@ -33,6 +30,9 @@ $title-color: purple;
 @media screen and (min-width: 456px) and (max-width: 768px) {
     .day-week {
         font-size: 1.4em!important;
+    }
+    .ui.large.horizontal.list>.item {
+        font-size: 1.5em!important;
     }
     .ui.segment,
     .ui.segment.basic {
@@ -45,22 +45,12 @@ $title-color: purple;
         width: 75px!important;
         height: 35px!important;
     }
-    #current {
-        font-size: 14px!important;
-    }
     .temperature-main,
     .summary-main {
         font-size: 1.8em!important
     }
     .feelslike-main {
         font-size: 1.5em!important
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .ui.segment,
-    .ui.segment.basic {
-        // padding: 2em 2em!important;
     }
 }
 
@@ -76,6 +66,10 @@ input[type=search] {
 
 .ui.menu .item:before {
     background-color: transparent;
+}
+
+.ui.large.horizontal.list>.item {
+    font-size: 1.3em!important;
 }
 
 #search-box {
@@ -126,13 +120,11 @@ div.ui.basic.segment {
 
 .temperatureMin-day {
     display: inline-block;
-    font-size: 1.4em;
+    font-size: 1.8em;
     color: #b79376;
     margin-left: 0.3em;
     display: inline-block;
     margin-bottom: 0.9em;
-    line-height: 1em;
-    vertical-align: top;
 }
 
 .temperatureMax-day {
