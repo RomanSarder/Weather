@@ -8,6 +8,9 @@ const DayWeather = React.createClass({
         })
         return hourly;
     },
+     floorTemp: function(temperature) {
+        return temperature > 0 ? `+${Math.round(temperature)}` : Math.round(temperature); 
+    },
     render: function() {
         let {temperatureMax, temperatureMin, summary, icon, time, hourly, humidity, windSpeed, windBearing, precipProbability} = this.props.forecast;
         let {timeZone} = this.props;
@@ -71,22 +74,22 @@ const DayWeather = React.createClass({
                                     <div className="item">
                                         <span className="back-daytime">Night</span>
                                         <span className="back-icon"><Skycon color="#99663C" icon={hourly[0].icon}></Skycon></span>
-                                        <span className="back-temp">{hourly[0].temperature}</span>
+                                        <span className="back-temp">{this.floorTemp(hourly[0].temperature)}&nbsp;°</span>
                                     </div>
                                     <div className="item">
                                         <span className="back-daytime">Morning</span>
                                         <span className="back-icon"><Skycon color="#99663C" icon={hourly[1].icon}></Skycon></span>
-                                        <span className="back-temp">{hourly[1].temperature}</span>
+                                        <span className="back-temp">{this.floorTemp(hourly[1].temperature)}&nbsp;°</span>
                                     </div>
                                     <div className="item">
                                         <span className="back-daytime">Day</span>
                                         <span className="back-icon"><Skycon color="#99663C" icon={hourly[2].icon}></Skycon></span>
-                                        <span className="back-temp">{hourly[2].temperature}</span>
+                                        <span className="back-temp">{this.floorTemp(hourly[2].temperature)}&nbsp;°</span>
                                     </div>
                                     <div className="item">
                                         <span className="back-daytime">Evening</span>
                                         <span className="back-icon"><Skycon color="#99663C" icon={hourly[3].icon}></Skycon></span>
-                                        <span className="back-temp">{hourly[3].temperature}</span>
+                                        <span className="back-temp">{this.floorTemp(hourly[3].temperature)}&nbsp;°</span>
                                     </div>
                                 </div>
                             </div>

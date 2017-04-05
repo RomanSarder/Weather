@@ -3,6 +3,7 @@ const WeekWeather = require('WeekWeather');
 const ErrorModal = require('ErrorModal');
 const CurrentWeather = require('CurrentWeather')
 const WeatherApi = require('WeatherApi');
+const ReactCSSTransitionGroup = require('react-addons-css-transition-group')
 
 const Weather = React.createClass({
   getInitialState: function () {
@@ -51,15 +52,20 @@ const Weather = React.createClass({
     
     function renderWeather () {
       if (isLoading) {
-        return <h3 className="text-center">Fetching weather...</h3>;
+        return <div className="ui active inverted dimmer">
+          <div className="ui indeterminate large active text loader">Fetching weather...</div>
+        </div>
       } else if (forecast) {
         return (
-          <div className="ui grid">
-            <div className="row one column centered unpadded">
-              <CurrentWeather currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={timeZone} todayWeather={forecast.daily.data[0]} />
-              <WeekWeather weekForecast={forecast.daily} timeZone={timeZone} hourly={forecast.hourly.data}/> 
-            </div>         
-          </div>
+          
+            <div className="ui grid" key={1}>
+              <div className="row one column centered unpadded" key={2}>
+                <CurrentWeather key={3} currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={timeZone} todayWeather={forecast.daily.data[0]} />
+                <WeekWeather key={4} weekForecast={forecast.daily} timeZone={timeZone} hourly={forecast.hourly.data} />
+              </div>
+            </div>
+
+
         );
       }
     }
@@ -74,8 +80,10 @@ const Weather = React.createClass({
 
     return (
       <div>
+        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
         {renderWeather()}
         {renderError()}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }

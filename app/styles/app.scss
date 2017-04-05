@@ -27,10 +27,11 @@ $title-color: purple;
     }
     .back .ui.header {
         font-size: 0.8em!important;
-        padding: 0 1em!important;
+        padding: 0 0.8em!important;
         max-height: 30px!important;
         overflow: hidden;
-        text-overflow: ellipsis;
+        text-overflow: "...";
+        display: none!important;
     }
     .temperatureMax-day,
     .temperatureMin-day {
@@ -43,25 +44,30 @@ $title-color: purple;
         display: none!important;
     }
     .back .back-icon {
-        width: 35px!important;
-        height: 15px!important;
+        width: 45px!important;
+        height: 20px!important;
     }
     .back .daytime-list.list.ui {
         padding-left: 0.5em!important;
+        padding-right: 0.2em!important;
+        margin-top: 1em;
     }
 }
 
 @media screen and (min-width: 456px) and (max-width: 705px) {
     .back .ui.header {
-        font-size: 1em!important;
-        padding: 0 0.5em!important;
-        margin-bottom: 1em!important;
+        font-size: 0.8em!important;
+        padding: 0 0.8em!important;
+        padding-left: 1em!important;
+        margin-bottom: 0.3em!important;
     }
     .back .ui.list.daytime-list {
         padding-left: 0.5em!important;
+        padding-right: 0.5em!important;
+        margin-top: 1em;
     }
     .back .list .item {
-        font-size: 1em!important;
+        font-size: 0.8em!important;
     }
     .back .conditions {
         display: none!important;
@@ -94,9 +100,9 @@ $title-color: purple;
 
 @media screen and (min-width: 706px) and (max-width: 991px) {
     .back .ui.header {
-        font-size: 1.2em!important;
+        font-size: 1em!important;
         padding: 0 0.5em!important;
-        margin-bottom: 1em!important;
+        margin-bottom: 0.5em!important;
     }
     .back .conditions {
         font-size: 1.2em!important;
@@ -119,6 +125,7 @@ $title-color: purple;
         padding-left: 0.5em!important;
         padding-right: 0.5em!important;
         margin-bottom: 0.5em!important;
+        font-size: 0.8em!important;
     }
 }
 
@@ -341,18 +348,21 @@ div.ui.basic.segment {
 .today-max {
     display: inline-block;
     margin: 0.3em auto 0.3em 0.3em;
+    padding-left: 0.5em;
 }
 
 .today-min {
     display: inline-block;
-    margin: 0.3em auto 20px 0.3em;
+    margin: 0.3em auto 0.3em 0.3em;
     color: #85a2a6;
 }
 
 .today-summary {
     display: inline-block;
-    margin: 0.3em auto 0.6em 0.3em;
+    margin: 0.3em auto 0.6em 0;
     line-height: 1.2em;
+    padding-right: 1em;
+    padding-left: 1em;
 }
 
 .current-icon {
@@ -389,7 +399,7 @@ div.ui.basic.segment {
 .back .ui.header {
     margin-bottom: 0em;
     color: #35656b!important;
-    font-size: 1.1em;
+    font-size: 0.9em;
     padding: 0 1em;
 }
 
@@ -439,4 +449,23 @@ div.ui.basic.segment {
 .front:hover~.back {
     opacity: 1;
     background-color: white!important;
+}
+
+//ReactTransitions
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.00;
+    transition: opacity 100ms ease-in;
 }
