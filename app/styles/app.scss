@@ -25,9 +25,47 @@ $title-color: purple;
     .summary-main {
         font-size: 1.3em!important
     }
+    .back .ui.header {
+        font-size: 0.8em!important;
+        padding: 0 1em!important;
+        max-height: 30px!important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .temperatureMax-day,
+    .temperatureMin-day {
+        font-size: 1.3em!important;
+    }
+    .back .list .item {
+        font-size: 0.8em!important;
+    }
+    .back .conditions {
+        display: none!important;
+    }
+    .back .back-icon {
+        width: 35px!important;
+        height: 15px!important;
+    }
+    .back .daytime-list.list.ui {
+        padding-left: 0.5em!important;
+    }
 }
 
-@media screen and (min-width: 456px) and (max-width: 768px) {
+@media screen and (min-width: 456px) and (max-width: 705px) {
+    .back .ui.header {
+        font-size: 1em!important;
+        padding: 0 0.5em!important;
+        margin-bottom: 1em!important;
+    }
+    .back .ui.list.daytime-list {
+        padding-left: 0.5em!important;
+    }
+    .back .list .item {
+        font-size: 1em!important;
+    }
+    .back .conditions {
+        display: none!important;
+    }
     .day-week {
         font-size: 1.4em!important;
     }
@@ -51,6 +89,36 @@ $title-color: purple;
     }
     .feelslike-main {
         font-size: 1.5em!important
+    }
+}
+
+@media screen and (min-width: 706px) and (max-width: 991px) {
+    .back .ui.header {
+        font-size: 1.2em!important;
+        padding: 0 0.5em!important;
+        margin-bottom: 1em!important;
+    }
+    .back .conditions {
+        font-size: 1.2em!important;
+        margin-bottom: 1em!important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1230px) {
+    .back .list .item {
+        font-size: 1em!important;
+    }
+    .back .conditions {
+        display: none!important;
+    }
+    .back .back-icon {
+        width: 35px!important;
+        height: 15px!important;
+    }
+    .back .header {
+        padding-left: 0.5em!important;
+        padding-right: 0.5em!important;
+        margin-bottom: 0.5em!important;
     }
 }
 
@@ -120,7 +188,7 @@ div.ui.basic.segment {
 
 .temperatureMin-day {
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 1.7em;
     color: #b79376;
     margin-left: 0.3em;
     display: inline-block;
@@ -129,14 +197,9 @@ div.ui.basic.segment {
 
 .temperatureMax-day {
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 1.7em;
     margin-bottom: 0.9em;
     padding-bottom: 0.5em;
-}
-
-.day-summary {
-    display: block;
-    text-align: center;
 }
 
 #current-container {
@@ -300,35 +363,73 @@ div.ui.basic.segment {
     line-height: 1.3em;
 }
 
+.back-daytime,
+.back-icon,
+.back-temp {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2em;
+}
+
+.back-icon {
+    width: 55px;
+    height: 25px;
+}
+
+.back-daytime {
+    color: #35656b;
+    font-weight: bold;
+}
+
+.back .ui.list.conditions {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.back .ui.header {
+    margin-bottom: 0.8em;
+    color: #35656b!important;
+    font-size: 1.2em;
+    padding: 0 1em;
+}
+
+.back .ui.list {
+    margin-bottom: 1em;
+}
+
 //custom semantic reveal 
 .flip {
     display: block;
     position: relative;
-}
-
-img {
-    width: 100px;
-    height: 150px;
+    width: 100%;
+    height: 100%
 }
 
 .front {
     opacity: 1;
-    position: absolute !important;
-    top: 0em !important;
-    left: 0em !important;
+    position: relative !important;
+    // top: 0em !important;
+    // left: 0em !important;
     z-index: 3 !important;
     -webkit-transition: all 0.5s ease 0.1s;
     transition: all 0.5s ease 0.1s;
     background-color: #fec463;
     height: 100%;
     width: 100%;
+    padding-left: 0.5em;
+    padding-right: 0.3em;
 }
 
 .back {
-    position: relative !important;
+    position: absolute !important;
     z-index: 2 !important;
+    top: 0em !important;
+    left: 0em !important;
     opacity: 0;
     transition: all 0.5s ease 0.1s;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
 }
 
 .front:hover {

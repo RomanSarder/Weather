@@ -1,7 +1,5 @@
 const React = require('react');
-const WeatherForm = require('WeatherForm');
 const WeekWeather = require('WeekWeather');
-const ForecastPresentation = require('ForecastPresentation');
 const ErrorModal = require('ErrorModal');
 const CurrentWeather = require('CurrentWeather')
 const WeatherApi = require('WeatherApi');
@@ -49,9 +47,8 @@ const Weather = React.createClass({
     }
   },
   render: function () {
-    let {isLoading, forecast, errorMessage} = this.state;
-    let self = this;
-
+    let {isLoading, forecast, errorMessage, timeZone} = this.state;
+    
     function renderWeather () {
       if (isLoading) {
         return <h3 className="text-center">Fetching weather...</h3>;
@@ -59,8 +56,8 @@ const Weather = React.createClass({
         return (
           <div className="ui grid">
             <div className="row one column centered unpadded">
-              <CurrentWeather currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={self.state.timeZone} todayWeather={forecast.daily.data[0]} />
-              <WeekWeather weekForecast={forecast.daily} timeZone={self.state.timeZone}/> 
+              <CurrentWeather currentForecast={forecast.currently} todayDate={forecast.daily.data[0].time} timeZone={timeZone} todayWeather={forecast.daily.data[0]} />
+              <WeekWeather weekForecast={forecast.daily} timeZone={timeZone} hourly={forecast.hourly.data}/> 
             </div>         
           </div>
         );
@@ -86,5 +83,3 @@ const Weather = React.createClass({
 
 module.exports = Weather;
 
-{/*<h1 className="text-center page-title">Get Weather</h1>
-        <WeatherForm onSearch={this.handleSearch}/>*/}

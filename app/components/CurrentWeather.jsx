@@ -16,7 +16,7 @@ const CurrentWeather = React.createClass({
         return (
             <div className="column center aligned" id="current">
                    <span className="current-date">{`${date} ${todayMonth}, ${todayDay}`}</span>
-                    <span className="skycon-today"><Skycon color='#35656b' icon={todayWeather.icon}/></span>
+                    <span className="skycon-today"><Skycon color='#35656b' icon={todayWeather.icon === 'partly-cloudy-night' ? 'partly-cloudy-day' : todayWeather.icon}/></span>
                     <span className="today-weather">
                     <span className="today-max">{this.floorTemp(todayWeather.temperatureMax)}&nbsp;°</span>
                     <span className="today-min">{this.floorTemp(todayWeather.temperatureMin)}&nbsp;°</span>
@@ -28,7 +28,7 @@ const CurrentWeather = React.createClass({
                     <div className="ui large horizontal divided list">
                         <div className="item">
                             <div className="content">
-                                <div className="header"><i className="wi wi-humidity"></i> {currentForecast.humidity * 100}%</div>
+                                <div className="header"><i className="wi wi-humidity"></i> {Math.floor(currentForecast.humidity * 100)}%</div>
                             </div>
                         </div>
                         <div className="item">
